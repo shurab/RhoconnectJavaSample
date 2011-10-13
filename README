@@ -1,0 +1,9 @@
+Sample of complete Java back-end application using Spring 3.0 MVC as front end technology and 
+Hibernate as backend ORM technology. For this application also uses Maven for build and dependency management and 
+MySQL as database to persist the data.
+ 
+The sample is based on excellent tutorial from "Spring 3.0 MVC Series": 
+http://viralpatel.net/blogs/2010/11/spring3-mvc-hibernate-maven-tutorial-eclipse-example.html
+
+
+
