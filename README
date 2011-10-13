@@ -20,7 +20,7 @@ mysql> CREATE TABLE CONTACTS
     created     TIMESTAMP DEFAULT NOW()
 );
 
-You might also wanted to change 'jdbc.properties' if they are different from project settings:
+You might also wanted to change 'jdbc.properties', if they are different from project settings:
 
 jdbc.username=root
 jdbc.password=
