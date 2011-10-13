@@ -1,9 +1,37 @@
-Sample of complete Java back-end application using Spring 3.0 MVC as front end technology and 
-Hibernate as backend ORM technology. For this application also uses Maven for build and dependency management and 
+Sample of complete Java back-end application using Spring 3.0 MVC as front end technology and Hibernate 
+as backend ORM technology. For this application also uses Maven for build and dependency management and 
 MySQL as database to persist the data.
  
-The sample is based on excellent tutorial from "Spring 3.0 MVC Series": 
+This sample is based on excellent tutorial from "Spring 3.0 MVC Series": 
 http://viralpatel.net/blogs/2010/11/spring3-mvc-hibernate-maven-tutorial-eclipse-example.html
 
+Steps you need to setup MySQL server. As a MySQL administrator create database 'ContactManager' and 
+table 'contacts':  
 
+mysql> create database ContactManager;
+mysql> use ContactManager;
+mysql> CREATE TABLE CONTACTS
+(
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    firstname   VARCHAR(30),
+    lastname    VARCHAR(30),
+    telephone   VARCHAR(15),
+    email       VARCHAR(30),
+    created     TIMESTAMP DEFAULT NOW()
+);
+
+You might also wanted to change 'jdbc.properties' if they are different from project settings:
+
+jdbc.username=root
+jdbc.password=
+
+
+You can run the application using Maven.
+In a terminal of the project's root folder issue these commands:
+
+mvn clean
+mvn jetty:run
+
+When you see [INFO] Started Jetty Server open a web browser and navigate to URL
+http://localhost:8080/RhoconnectJavaSample/index 
 
