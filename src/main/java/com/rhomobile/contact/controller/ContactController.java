@@ -2,6 +2,10 @@ package com.rhomobile.contact.controller;
 
 import java.util.Map;
 
+//import org.slf4j.Logger;
+//import org.slf4j.LoggerFactory;
+import org.apache.log4j.Logger;
+
 import com.rhomobile.contact.form.Contact;
 import com.rhomobile.contact.service.ContactService;
 
@@ -15,7 +19,9 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 @Controller
 public class ContactController {
-
+    //get log4j handler
+	private static final Logger logger = Logger.getLogger(ContactController.class);	
+	
 	@Autowired
 	private ContactService contactService;
 
@@ -31,13 +37,18 @@ public class ContactController {
 	@RequestMapping("/new")
 	public String newContact(Map<String, Object> map) {
 		map.put("contact", new Contact());
+//		if(logger.isDebugEnabled()) {
+//			logger.debug("Logger: ContactController::new");
+//		}
+//		logger.info("Logger:info: ContactController::new");
+		
 		return "new";
 	}
 
 	@RequestMapping(value = "/add", method = RequestMethod.POST)
 	public String addContact(@ModelAttribute("contact")
 	Contact contact, BindingResult result) {
-
+//		logger.info(contact.toString());
 		contactService.addContact(contact);
 		return "redirect:/index";
 	}

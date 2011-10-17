@@ -59,4 +59,12 @@ public class Contact {
 		this.id = id;
 	}
 	
+	public String toString() {				
+		String tmpStr = "[id: " + id + " | first name: " + firstname;
+		tmpStr += " | last name: " + lastname;		
+		tmpStr += " | telephone: " + telephone;
+		tmpStr += " | email: " + email + "]";		
+		return tmpStr;
+	}
+	
 }
