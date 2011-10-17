@@ -22,7 +22,6 @@ public class ContactServiceImpl implements ContactService {
 
 	@Transactional
 	public List<Contact> listContact() {
-
 		return contactDAO.listContact();
 	}
 
@@ -30,4 +29,10 @@ public class ContactServiceImpl implements ContactService {
 	public void removeContact(Integer id) {
 		contactDAO.removeContact(id);
 	}
+
+	@Transactional
+	public Contact showContact(Integer id) {
+        return contactDAO.getContact(id);
+	}
+
 }

@@ -19,22 +19,23 @@ public class ContactDAOImpl implements ContactDAO {
 	}
 
 	public List<Contact> listContact() {
-
-		return sessionFactory.getCurrentSession().createQuery("from Contact")
-				.list();
+		return sessionFactory.getCurrentSession().createQuery("from Contact").list();
 	}
 
 	public void removeContact(Integer id) {
-		Contact contact = (Contact) sessionFactory.getCurrentSession().load(
-				Contact.class, id);
+		Contact contact = (Contact) sessionFactory.getCurrentSession().load(Contact.class, id);
 		if (null != contact) {
 			sessionFactory.getCurrentSession().delete(contact);
 		}
-
 	}
+
+    public Contact getContact(Integer id) {
+		Contact contact = (Contact) sessionFactory.getCurrentSession().load(Contact.class, id);    	
+		return contact;
+    }
 	
 	public void updateContact(Contact contact) {
-		// TODO:
+		sessionFactory.getCurrentSession().merge(contact);
 	}
 
 }

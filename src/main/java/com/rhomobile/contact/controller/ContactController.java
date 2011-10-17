@@ -22,10 +22,16 @@ public class ContactController {
 	@RequestMapping("/index")
 	public String listContacts(Map<String, Object> map) {
 
-		map.put("contact", new Contact());
+//		map.put("contact", new Contact());
 		map.put("contactList", contactService.listContact());
 
 		return "contact";
+	}
+
+	@RequestMapping("/new")
+	public String newContact(Map<String, Object> map) {
+		map.put("contact", new Contact());
+		return "new";
 	}
 
 	@RequestMapping(value = "/add", method = RequestMethod.POST)
@@ -33,7 +39,6 @@ public class ContactController {
 	Contact contact, BindingResult result) {
 
 		contactService.addContact(contact);
-
 		return "redirect:/index";
 	}
 
@@ -41,7 +46,6 @@ public class ContactController {
 	public String deleteContact(@PathVariable("contactId")
 	Integer contactId) {
 		contactService.removeContact(contactId);
-
 		return "redirect:/index";
 	}
 	
@@ -49,14 +53,15 @@ public class ContactController {
 	@RequestMapping("/show/{contactId}")
 	public String showContact(@PathVariable("contactId")
 	Integer contactId) {
-		//contactService.removeContact(contactId);
+		Contact contact = contactService.showContact(contactId);
+		//return "show";
 		return "redirect:/index";
 	}
 
 	@RequestMapping("/edit/{contactId}")
 	public String editContact(@PathVariable("contactId")
 	Integer contactId) {
-		//contactService.removeContact(contactId);
+		//contactService.editContact(contactId);
 		return "redirect:/index";
 	}
 		
