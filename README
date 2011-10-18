@@ -5,6 +5,11 @@ MySQL as database to persist the data.
 This sample is based on excellent tutorial from "Spring 3.0 MVC Series": 
 http://viralpatel.net/blogs/2010/11/spring3-mvc-hibernate-maven-tutorial-eclipse-example.html
 
+Prerequisites
+ * Java (1.6), Maven (2.2.1), Git
+ * MySQL server community edition 
+ * Eclipse Helios Java EE IDE for Web Developers.
+
 Steps you need to setup MySQL server. As a MySQL administrator create database 'ContactManager' and 
 table 'contacts':  
 
@@ -33,5 +38,10 @@ mvn clean
 mvn jetty:run
 
 When you see [INFO] Started Jetty Server open a web browser and navigate to URL
-http://localhost:8080/RhoconnectJavaSample/index 
+http://localhost:8080/contacts/index 
 
+Yet another option is to create executable WAR file
+
+mvn war:war
+
+and deploy it into the Tomcat server.   

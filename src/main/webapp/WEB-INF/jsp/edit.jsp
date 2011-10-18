@@ -31,7 +31,7 @@
 <body>
 <h2>Editing contact</h2>
 
-<form:form method="post" action="/RhoconnectJavaSample/add.html" commandName="contact">
+<form:form method="post" action="/contacts/add.html" commandName="contact">
   <table>
     <tr>
       <td><form:label path="firstname"><spring:message code="label.firstname"/></form:label></td>
@@ -60,7 +60,7 @@
 
 <p>
   <!-- TODO: 'Show', (@contact) | contacts_path  -->
-  <a href="/RhoconnectJavaSample/show/${contact.id}">Show</a> | <a href="/RhoconnectJavaSample/index">Back</a>
+  <a href="/contacts/show/${contact.id}">Show</a> | <a href="/contacts/index">Back</a>
 </p>
 
 

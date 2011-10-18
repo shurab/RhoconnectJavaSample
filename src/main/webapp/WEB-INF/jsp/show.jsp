@@ -50,8 +50,8 @@
  
 <p>
   <!-- TODO: edit_contact_path(@contact) | contacts_path  -->
-  <a href="/RhoconnectJavaSample/edit/${contact.id}">Edit</a> | 
-  <a href="/RhoconnectJavaSample/index">Back</a>
+  <a href="/contacts/edit/${contact.id}">Edit</a> | 
+  <a href="/contacts/index">Back</a>
 </p>
 
 </body>
