@@ -51,7 +51,7 @@
     </tr>
     <tr>
       <td colspan="2">
-        <input type="submit" value="<spring:message code="label.addcontact"/>"/>
+        <input type="submit" value="<spring:message code="label.editcontact"/>"/>
       </td>
     </tr>
   </table>
