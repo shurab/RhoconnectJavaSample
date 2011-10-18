@@ -31,8 +31,13 @@ public class ContactServiceImpl implements ContactService {
 	}
 
 	@Transactional
-	public Contact showContact(Integer id) {
+	public Contact getContact(Integer id) {
         return contactDAO.getContact(id);
 	}
 
+	@Transactional
+	public void updateContact(Contact contact) {
+		contactDAO.updateContact(contact);		
+	}
+	
 }

@@ -8,7 +8,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-    <title>New contact</title>
+<title>Person Info</title>
     <style type="text/css">
         body {
             font-family: sans-serif;
@@ -29,37 +29,31 @@
 </head>
 <body>
 
-<h2>New contact</h2>
-
-<form:form method="post" action="add.html" commandName="contact">
   <table>
     <tr>
-        <td><form:label path="firstname"><spring:message code="label.firstname"/></form:label></td>
-        <td><form:input path="firstname" /></td> 
+        <td>First Name: </td>
+        <td>${contact.firstname}</td> 
     </tr>
     <tr>
-        <td><form:label path="lastname"><spring:message code="label.lastname"/></form:label></td>
-        <td><form:input path="lastname" /></td>
+        <td>Last Name: </td>
+        <td>${contact.lastname}</td> 
     </tr>
     <tr>
-        <td><form:label path="email"><spring:message code="label.email"/></form:label></td>
-        <td><form:input path="email" /></td>
+        <td>Email: </td>
+        <td>${contact.email}</td>
     </tr>
     <tr>
-        <td><form:label path="telephone"><spring:message code="label.telephone"/></form:label></td>
-        <td><form:input path="telephone" /></td>
+        <td>Telephone: </td>
+        <td>${contact.telephone}</td>
     </tr>
-    <tr>
-        <td colspan="2">
-            <input type="submit" value="<spring:message code="label.addcontact"/>"/>
-        </td>
-    </tr>
-  </table>    
-</form:form>
-
+  </table>
+ 
 <p>
- <a href="index">Back</a>
+  <!-- TODO: edit_contact_path(@contact) | contacts_path  -->
+  <a href="/RhoconnectJavaSample/edit/${contact.id}">Edit</a> | 
+  <a href="/RhoconnectJavaSample/index">Back</a>
 </p>
 
+</body>
 </body>
 </html>

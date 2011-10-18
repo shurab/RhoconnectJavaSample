@@ -30,7 +30,7 @@ public class ContactDAOImpl implements ContactDAO {
 	}
 
     public Contact getContact(Integer id) {
-		Contact contact = (Contact) sessionFactory.getCurrentSession().load(Contact.class, id);    	
+		Contact contact = (Contact) sessionFactory.getCurrentSession().get(Contact.class, id);    	
 		return contact;
     }
 	
