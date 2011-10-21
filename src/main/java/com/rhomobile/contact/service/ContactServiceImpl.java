@@ -16,8 +16,8 @@ public class ContactServiceImpl implements ContactService {
 	private ContactDAO contactDAO;
 	
 	@Transactional
-	public void addContact(Contact contact) {
-		contactDAO.addContact(contact);
+	public int addContact(Contact contact) {
+		return contactDAO.addContact(contact);
 	}
 
 	@Transactional
