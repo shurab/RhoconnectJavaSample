@@ -16,8 +16,52 @@
 		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd
 		http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd">
 
-	<context:annotation-config />
-	<context:component-scan base-package="com.rhomobile.contact" />
+	<context:component-scan base-package="com.rhomobile.contact" />	
+
+    <bean class="org.springframework.web.servlet.mvc.annotation.DefaultAnnotationHandlerMapping" />
+
+    <!-- rhoconnect-java plugin packages -->
+    <!-- rhoconnect-java plugin converters -->
+    <!-- rhoconnect-java plugin beans -->
+
+<!-- Uncomment the following lines to use application together with rhoconnect-java plugin: 
+    <context:component-scan base-package="com.rhomobile.rhoconnect.controller" /> 
+
+    <bean class="org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerAdapter">
+        <property name="order" value="1" />
+        <property name="messageConverters">
+            <list>
+                <ref bean="stringHttpMessageConverter"/>
+                <ref bean="jsonConverter" />
+            </list>
+        </property>
+    </bean>
+
+    <bean id="jsonConverter" class="org.springframework.http.converter.json.MappingJacksonHttpMessageConverter">
+        <property name="supportedMediaTypes" value="application/json" />
+    </bean>
+
+    <bean id="stringHttpMessageConverter" class="org.springframework.http.converter.StringHttpMessageConverter">
+    </bean>
+
+    <bean id="restTemplate" class="org.springframework.web.client.RestTemplate">
+        <property name="messageConverters">
+            <list>
+                <ref bean="jsonConverter" />
+                <ref bean="stringHttpMessageConverter"/>
+            </list>
+        </property>
+    </bean>    
+
+    <bean id="rhoconnect" class = "com.rhomobile.rhoconnect.RhoconnectImpl" />
+
+    <bean id="rhoconnectClient" class = "com.rhomobile.rhoconnect.RhoconnectClient" init-method="setAppEndpoint" >
+        <property name="restTemplate"><ref bean="restTemplate"/></property>
+        <property name="endpointUrl" value="http://localhost:9292" />
+        <property name="appEndpoint" value="http://localhost:8080/contacts" />
+        <property name="apiToken" value="sometokenforme" />
+    </bean>
+ -->
 
 	<bean id="jspViewResolver"
 		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
@@ -66,6 +110,5 @@
 		class="org.springframework.orm.hibernate3.HibernateTransactionManager">
 		<property name="sessionFactory" ref="sessionFactory" />
 	</bean>
-
 
 </beans>
