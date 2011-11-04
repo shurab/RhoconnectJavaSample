@@ -80,7 +80,7 @@
 	</bean>
 
 
-<!--  Use with mysql 
+<!--  Use the following beans with MySQL  
 	<bean id="propertyConfigurer"
 	  class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer"
 	  p:location="/WEB-INF/jdbc.properties" />
@@ -92,7 +92,7 @@
 		p:password="${jdbc.password}" />
 -->
 
-    <!-- Embedded in-memory database -->
+    <!-- Embedded in-memory database HSQL -->
 	<jdbc:embedded-database id="dataSource">
 		<jdbc:script location="classpath:schema.sql"/>
 		<jdbc:script location="classpath:test-data.sql"/>
