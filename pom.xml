@@ -102,7 +102,7 @@
         <groupId>org.hibernate</groupId>
         <artifactId>hibernate-entitymanager</artifactId>
         <version>3.3.2.GA</version>
-    </dependency>  	
+    </dependency>
   	<dependency>
   		<groupId>taglibs</groupId>
   		<artifactId>standard</artifactId>

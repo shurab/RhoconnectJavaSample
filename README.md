@@ -1,3 +1,6 @@
+RhoconnectJavaDemo
+===
+
 Sample of complete Java back-end application using Spring 3.0 MVC as front end technology and Hibernate 
 as back-end ORM technology. For this application Maven2 is also used for build and dependency management and 
 embedded in-memory database (HSQL) to persist the data.
@@ -17,14 +20,16 @@ Using the in-memory database means there is no need to setup and run a separate 
 You can run the application using Maven.
 In a terminal of the project's root folder issue these commands:
 
-mvn clean
-mvn jetty:run
+	:::term
+    mvn clean
+    mvn jetty:run
 
 When you see [INFO] Started Jetty Server open a web browser and navigate to URL
 http://localhost:8080/contacts/index 
 
 Yet another option is to create executable WAR file
 
-mvn war:war
+	:::term
+    mvn war:war
 
 and deploy it into the Tomcat server.   
